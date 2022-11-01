@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-   <property name="M_PI" value="3.14159"/>
-   <property name="M_SCALE" value="0.01"/>
+   <xacro:property name="M_PI" value="3.14159"/>
+   <xacro:property name="M_SCALE" value="0.01"/>
    <xacro:include filename="$(find phantomx_arm_description)/urdf/common_materials.xacro" />
    <xacro:include filename="$(find phantomx_arm_description)/urdf/robot_name_description.xacro" />
 
-   <!--link name="plate_top_link"/-->
-   <!--joint name="fixed" type="fixed">
+   <link name="plate_top_link"/>
+   <!--<joint name="fixed" type="fixed">
       <parent link="plate_top_link" />
       <child link="ph_base_link" />
-   </joint-->
+   </joint>-->
 
    <!-- REFERENCE: http://answers.gazebosim.org/question/4372/the-inertia-matrix-explained/ -->
 
@@ -29,7 +29,7 @@
       </gazebo>
    
       <!-- links -->
-      <link name="arm_base_link">
+      <link name="base_link">
          <visual>
             <origin xyz="${M_SCALE*10} ${M_SCALE*10} ${M_SCALE*0}" rpy="${M_PI*0} ${M_PI*0} ${M_PI}" />
             <geometry>
@@ -196,12 +196,12 @@
       <joint name="arm_base_joint" type="fixed">
          <origin xyz="${M_SCALE*12.25} ${M_SCALE*0.2} ${M_SCALE*0.2}" rpy="${M_PI*0} ${M_PI*0} ${-M_PI/2}" />
          <parent link="plate_top_link" />
-         <child link="arm_base_link"/>
+         <child link="base_link"/>
          <axis xyz="0 1 0" />
       </joint>
       <joint name="joint_1" type="revolute">
          <origin xyz="${M_SCALE*0.125} ${M_SCALE*-3.25} ${M_SCALE*8.75}" rpy="${M_PI/2} ${M_PI*2} ${-M_PI/2}" />
-         <parent link="arm_base_link" />
+         <parent link="base_link" />
          <child link="link_1" />
          <axis xyz="0 1 0" />
          <limit lower="-2.617" upper="2.617" effort="3" velocity="0.785" />

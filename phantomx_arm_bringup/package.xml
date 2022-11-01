@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>phantomx_arm_bringup</name>
+  <version>1.0.0</version>
+
+  <description>ROS 2 launch scripts for starting the Phantom X Pincher arm.</description>
+  <author email="lightech@outlook.com">Lightech</author>
+
+  <maintainer email="lightech@outlook.com">Lightech</maintainer>
+
+  <license>BSD</license>
+  <url></url>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>urdf_tutorial</exec_depend>
+  <exec_depend>arbotix_python</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

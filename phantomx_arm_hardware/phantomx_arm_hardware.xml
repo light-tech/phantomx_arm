@@ -1,0 +1,9 @@
+<library path="phantomx_arm_hardware">
+  <class name="phantomx_arm_hardware/PhantomXArmSystemPositionOnlyHardware"
+         type="phantomx_arm_hardware::PhantomXArmSystemPositionOnlyHardware"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      The ROS2 Control Phantom X Arm protocol.
+    </description>
+  </class>
+</library>
